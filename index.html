@@ -8,10 +8,10 @@
     <style>
         :root {
             --brand-purple: #4B0082; 
-            --brand-purple-soft: #f3e5f5;
-            --brand-gold: #D4AF37;
+            --brand-purple-deep: #330060;
+            --brand-purple-light: #f3e5f5;
             --text-main: #1d1d1f;
-            --text-muted: #86868b;
+            --text-muted: #6e6e73;
             --bg-white: #ffffff;
             --bg-light: #fbfbfd;
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -20,7 +20,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; color: var(--text-main); background: var(--bg-white); line-height: 1.5; -webkit-font-smoothing: antialiased; }
 
-        /* --- NAVIGATION: PREMIUM DASHBOARD STYLE --- */
+        /* --- NAVIGATION --- */
         nav {
             padding: 0 6%;
             display: flex;
@@ -30,83 +30,109 @@
             backdrop-filter: blur(20px);
             position: fixed; width: 100%; top: 0; z-index: 1000;
             border-bottom: 1px solid rgba(0,0,0,0.05);
-            height: 90px;
+            height: 80px;
         }
         
-        .nav-brand { display: flex; align-items: center; }
-        .logo-img { height: 130px; width: auto; margin-left: -20px; }
-
-        .nav-links { display: flex; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 13px; margin-left: 35px; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); }
+        .nav-brand img { height: 110px; width: auto; margin-left: -15px; }
+        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 13px; margin-left: 30px; transition: var(--transition); }
         .nav-links a:hover { color: var(--brand-purple); }
         
-        .nav-cta { background: var(--brand-purple); color: white !important; padding: 12px 24px; border-radius: 50px; margin-left: 40px; }
+        .nav-cta { background: var(--brand-purple); color: white !important; padding: 10px 20px; border-radius: 50px; }
 
-        /* --- HERO: ARCHITECTURAL DESIGN --- */
+        /* --- HERO --- */
         .hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 160px 10% 80px;
             text-align: center;
-            padding: 120px 10% 60px;
-            background: linear-gradient(180deg, #fff 0%, var(--brand-purple-soft) 100%);
+            background: radial-gradient(circle at top, var(--brand-purple-light) 0%, #fff 70%);
         }
-        .hero-tag { background: white; padding: 8px 16px; border-radius: 20px; font-size: 11px; font-weight: 800; color: var(--brand-purple); box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: inline-block; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
-        .hero h1 { font-size: clamp(2.8rem, 6.5vw, 4.2rem); font-weight: 800; line-height: 1.05; letter-spacing: -3px; margin-bottom: 25px; color: #000; }
-        .hero h1 span { background: linear-gradient(90deg, var(--brand-purple), #9370DB); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.25rem; color: var(--text-muted); max-width: 750px; margin: 0 auto 40px; font-weight: 400; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; letter-spacing: -2px; line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 span { color: var(--brand-purple); }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
 
-        /* --- TRUST & SCALE BAR --- */
-        .trust-grid { background: #000; padding: 60px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; color: white; text-align: center; }
-        .trust-item h4 { font-size: 36px; font-weight: 800; color: var(--brand-purple-soft); margin-bottom: 5px; }
-        .trust-item p { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; opacity: 0.6; }
+        /* --- METRICS BAR --- */
+        .metrics-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 40px 10%;
+            background: white;
+            border-bottom: 1px solid #f2f2f2;
+        }
+        .metric-item { text-align: center; }
+        .metric-item h4 { font-size: 24px; color: var(--brand-purple); font-weight: 800; }
+        .metric-item p { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-top: 5px; }
 
-        /* --- CAPABILITIES MATRIX --- */
-        .matrix-section { padding: 100px 10% 60px; background: var(--bg-white); }
-        .matrix-header { text-align: center; margin-bottom: 70px; }
-        .matrix-header h2 { font-size: 36px; font-weight: 800; letter-spacing: -1px; }
-        
-        .services-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-        .pillar h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--brand-purple); margin-bottom: 30px; border-bottom: 2px solid var(--brand-purple-soft); padding-bottom: 10px; display: inline-block; }
-        
-        .service-entry { margin-bottom: 35px; transition: var(--transition); padding: 15px; border-radius: 12px; }
-        .service-entry:hover { background: var(--bg-light); transform: translateX(10px); }
-        .service-entry h4 { font-size: 19px; font-weight: 700; margin-bottom: 8px; color: #000; }
-        .service-entry p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+        /* --- SOLUTIONS: VISUAL GRID --- */
+        .section-header { padding: 80px 10% 40px; text-align: center; }
+        .solution-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 30px; 
+            padding: 0 10% 80px; 
+        }
+        .solution-card { 
+            background: var(--bg-light); 
+            border-radius: 24px; 
+            overflow: hidden; 
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: var(--transition);
+        }
+        .solution-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(75,0,130,0.08); border-color: var(--brand-purple-light); }
+        .sol-img { height: 200px; background-size: cover; background-position: center; }
+        .sol-content { padding: 30px; }
+        .sol-content h3 { font-size: 20px; color: var(--brand-purple); margin-bottom: 12px; font-weight: 700; }
+        .sol-content p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 
-        /* --- THE TECH ADVANTAGE (WHY PSC?) --- */
-        .tech-advantage { padding: 100px 10%; background: #080808; color: white; display: flex; gap: 80px; align-items: center; }
-        .tech-box { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .tech-card { background: #111; padding: 30px; border-radius: 20px; border: 1px solid #222; }
-        .tech-card h5 { color: var(--brand-purple-soft); font-size: 16px; margin-bottom: 10px; }
-        .tech-card p { font-size: 13px; opacity: 0.6; }
-        .tech-info { flex: 0.8; }
-
-        /* --- FOUNDER PROFILE --- */
-        .founder-wrap { padding: 100px 10%; background: var(--bg-light); }
-        .founder-card { background: white; border-radius: 40px; display: flex; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.05); }
-        .founder-img { flex: 1; background: url('https://images.squarespace-cdn.com/content/69fdb4e5209d573dc719391f/240d3ce0-1ee8-4056-84a4-e06bd0af980a/WhatsApp+Image+2026-05-09+at+15.12.27.jpeg?content-type=image%2Fjpeg') center/cover; min-height: 500px; }
-        .founder-bio { flex: 1.2; padding: 80px; }
-        .founder-bio h2 { font-size: 36px; margin-bottom: 20px; }
-        .founder-bio p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px; }
+        /* --- FOUNDER --- */
+        .founder-section { padding: 80px 10%; display: flex; align-items: center; gap: 60px; background: var(--bg-light); border-radius: 60px; margin: 0 4%; }
+        .founder-image { 
+            flex: 1; 
+            height: 500px; 
+            background: url('https://images.squarespace-cdn.com/content/69fdb4e5209d573dc719391f/240d3ce0-1ee8-4056-84a4-e06bd0af980a/WhatsApp+Image+2026-05-09+at+15.12.27.jpeg?content-type=image%2Fjpeg') center/cover; 
+            border-radius: 30px; 
+        }
+        .founder-text { flex: 1.2; }
+        .founder-text h2 { font-size: 32px; margin-bottom: 20px; color: var(--brand-purple); }
 
         /* --- CONTACT --- */
-        .contact-v2 { padding: 100px 10%; background: var(--brand-purple); color: white; text-align: center; }
-        .form-dark { max-width: 600px; margin: 50px auto 0; text-align: left; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 30px; backdrop-filter: blur(10px); }
-        .form-dark label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; }
-        .form-dark input { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 15px 0; margin-bottom: 25px; color: white; font-size: 16px; outline: none; }
-        .form-dark input:focus { border-bottom-color: white; }
+        .contact-section { padding: 100px 10%; text-align: center; }
+        .contact-card { 
+            max-width: 600px; 
+            margin: 40px auto 0; 
+            background: white; 
+            padding: 50px; 
+            border-radius: 40px; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            border: 1px solid var(--brand-purple-light);
+        }
+        .form-group { text-align: left; margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 12px; font-weight: 700; color: var(--brand-purple); margin-bottom: 8px; text-transform: uppercase; }
+        .form-group input { width: 100%; padding: 15px; border: 1px solid #eee; border-radius: 12px; outline: none; transition: 0.3s; }
+        .form-group input:focus { border-color: var(--brand-purple); }
+
+        .btn { 
+            background: var(--brand-purple); 
+            color: white; 
+            border: none; 
+            padding: 18px 40px; 
+            border-radius: 50px; 
+            font-weight: 700; 
+            cursor: pointer; 
+            width: 100%; 
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        .btn:hover { background: var(--brand-purple-deep); transform: scale(1.02); }
 
         /* --- FOOTER --- */
-        footer { padding: 80px 10% 40px; background: white; text-align: center; }
-        .footer-links { margin: 30px 0; display: flex; justify-content: center; gap: 40px; }
-        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 12px; font-weight: 700; }
+        footer { padding: 60px 10%; text-align: center; border-top: 1px solid #f2f2f2; }
+        .footer-links { margin: 25px 0; display: flex; justify-content: center; gap: 30px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 600; }
 
-        @media (max-width: 1024px) {
-            .services-container { grid-template-columns: 1fr; }
-            .tech-advantage { flex-direction: column; }
-            .founder-card { flex-direction: column; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .founder-section { flex-direction: column; padding: 40px; text-align: center; }
+            .founder-image { width: 100%; height: 350px; }
         }
     </style>
 </head>
@@ -114,162 +140,134 @@
 
 <nav>
     <div class="nav-brand">
-        <a href="#"><img src="https://images.squarespace-cdn.com/content/69fdb4e5209d573dc719391f/6e76699e-565d-4a5a-9ea5-c48eae5e718e/Gemini_Generated_Image_807hk8807hk8807h.png?content-type=image%2Fpng" alt="PSC Media Tech Logo" class="logo-img"></a>
+        <img src="https://images.squarespace-cdn.com/content/69fdb4e5209d573dc719391f/6e76699e-565d-4a5a-9ea5-c48eae5e718e/Gemini_Generated_Image_807hk8807hk8807h.png?content-type=image%2Fpng" alt="PSC Logo">
     </div>
     <div class="nav-links">
         <a href="#solutions">Solutions</a>
-        <a href="#advantage">Tech Stack</a>
-        <a href="#founder">Leadership</a>
-        <a href="#contact" class="nav-cta">Get an Audit</a>
+        <a href="#founder">Legacy</a>
+        <a href="#contact" class="nav-cta">Growth Audit</a>
     </div>
 </nav>
 
 <section class="hero">
-    <div class="hero-content">
-        <div class="hero-tag">Intelligent Growth Infrastructure</div>
-        <h1>Performance that <span>Propels</span> Brands.</h1>
-        <p>A multi-screen media powerhouse engineering high-intent growth through AI-driven programmatic, CTV innovation, and full-funnel performance science.</p>
-        <a href="#contact" style="padding: 20px 50px; background: #000; color: #fff; text-decoration: none; border-radius: 50px; font-weight: 700; display: inline-block;">Consult with Our Experts</a>
-    </div>
+    <h1>Engineering <span>Growth</span><br>Across Every Screen.</h1>
+    <p>We combine 15 years of performance legacy with cutting-edge AI technology to scale brands with absolute transparency.</p>
+    <a href="#contact" style="text-decoration:none" class="btn" style="width:auto">Initiate Scale</a>
 </section>
 
-<div class="trust-grid">
-    <div class="trust-item"><h4>200+</h4><p>Global Brands</p></div>
-    <div class="trust-item"><h4>$100M+</h4><p>Ad Spend Managed</p></div>
-    <div class="trust-item"><h4>40+</h4><p>Active Geographies</p></div>
-    <div class="trust-item"><h4>0%</h4><p>Ad Fraud Policy</p></div>
+<div class="metrics-bar">
+    <div class="metric-item">
+        <h4>15+ Years</h4>
+        <p>Digital Experience</p>
+    </div>
+    <div class="metric-item">
+        <h4>500M+</h4>
+        <p>Monthly Impressions</p>
+    </div>
+    <div class="metric-item">
+        <h4>Data-First</h4>
+        <p>Growth Framework</p>
+    </div>
+    <div class="metric-item">
+        <h4>Zero-Fraud</h4>
+        <p>Transparency Policy</p>
+    </div>
 </div>
 
-<section class="matrix-section" id="solutions">
-    <div class="matrix-header">
-        <h2>Specialized Media Capabilities</h2>
+<section id="solutions" class="section-header">
+    <h2 style="font-size: 32px;">Specialized Media Solutions</h2>
+</section>
+
+<div class="solution-grid">
+    <div class="solution-card">
+        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600');"></div>
+        <div class="sol-content">
+            <h3>OTT & CTV Advertising</h3>
+            <p>Target the modern living room with unskippable ads on premium streaming services, optimized for household brand recall.</p>
+        </div>
     </div>
+    <div class="solution-card">
+        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600');"></div>
+        <div class="sol-content">
+            <h3>Performance Lead Gen</h3>
+            <p>Quality-vetted acquisition on CPL and CPA models. We don't just deliver clicks; we deliver future customers.</p>
+        </div>
+    </div>
+    <div class="solution-card">
+        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600');"></div>
+        <div class="sol-content">
+            <h3>Mobile App Marketing</h3>
+            <p>End-to-end user acquisition for Android and iOS, focusing on high-retention users and fraud-free scale.</p>
+        </div>
+    </div>
+    <div class="solution-card">
+        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=600');"></div>
+        <div class="sol-content">
+            <h3>Rich Media Innovation</h3>
+            <p>Engage audiences with interactive and gamified ad formats that outperform standard banners by 400%.</p>
+        </div>
+    </div>
+    <div class="solution-card">
+        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=600');"></div>
+        <div class="sol-content">
+            <h3>Marketplace Ads</h3>
+            <p>Dominate Amazon, Instamart, and Zepto. We optimize your digital shelf presence for immediate ROI.</p>
+        </div>
+    </div>
+    <div class="solution-card">
+        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&q=80&w=600');"></div>
+        <div class="sol-content">
+            <h3>Programmatic Display</h3>
+            <p>Real-time bidding across global exchanges using AI-powered contextual targeting for brand safety.</p>
+        </div>
+    </div>
+</div>
+
+<section id="founder" class="founder-section">
+    <div class="founder-image"></div>
+    <div class="founder-text">
+        <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: 800; color: var(--brand-purple); margin-bottom: 10px;">The Leadership</p>
+        <h2>Pranay Chowdhary</h2>
+        <p>A seasoned growth architect with a 15-year legacy in the Indian digital ecosystem. Having managed high-stakes portfolios for top-tier brands, Pranay founded PSC Media Tech to bridge the gap between media buying and business EBITDA.</p>
+        <a href="https://linkedin.com/in/pranaychowdhary" target="_blank" style="color: var(--brand-purple); font-weight: 800; text-decoration: none; display: inline-block; margin-top: 20px;">Connect on LinkedIn →</a>
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <h2 style="font-size: 42px; font-weight: 800;">Ready to Scale?</h2>
+    <p style="color: var(--text-muted); margin-top: 10px;">Get a detailed performance audit for your brand.</p>
     
-    <div class="services-container">
-        <div class="pillar">
-            <h3>Reach & Awareness</h3>
-            <div class="service-entry">
-                <h4>Programmatic OTT/CTV</h4>
-                <p>Strategic ad placement on high-engagement streaming platforms with unskippable formats and household syncing.</p>
-            </div>
-            <div class="service-entry">
-                <h4>Contextual Intelligence</h4>
-                <p>Proprietary AI engines that target content sentiment and keywords instead of relying on invasive cookies.</p>
-            </div>
-            <div class="service-entry">
-                <h4>Digital OOH</h4>
-                <p>Dynamic outdoor advertising optimized by real-time footfall data and audience movement patterns.</p>
-            </div>
-        </div>
-
-        <div class="pillar">
-            <h3>Performance Scale</h3>
-            <div class="service-entry">
-                <h4>Global Lead Gen</h4>
-                <p>CPL/CPA models designed for quality-first acquisition across BFSI, Real Estate, and Education sectors.</p>
-            </div>
-            <div class="service-entry">
-                <h4>Mobile App Growth</h4>
-                <p>Full-funnel app marketing from pre-launch buzz to high-retention user acquisition and LTV modeling.</p>
-            </div>
-            <div class="service-entry">
-                <h4>Marketplace Ads</h4>
-                <p>End-to-end management for Amazon, Flipkart, and Quick-Commerce platforms to dominate the digital shelf.</p>
-            </div>
-        </div>
-
-        <div class="pillar">
-            <h3>Innovation & Engagement</h3>
-            <div class="service-entry">
-                <h4>Rich Media Lab</h4>
-                <p>In-house production of gamified, interactive, and 3D ad units that drive 4x higher engagement rates.</p>
-            </div>
-            <div class="service-entry">
-                <h4>Voice & Conversational</h4>
-                <p>Leveraging NLP-based voice ads and automated call-tracking to capture the next billion voice-first users.</p>
-            </div>
-            <div class="service-entry">
-                <h4>Influencer Network</h4>
-                <p>Data-vetted access to 30,000+ creators for organic brand integration that converts.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="tech-advantage" id="advantage">
-    <div class="tech-info">
-        <h3 style="color: var(--brand-purple-soft); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px;">The Advantage</h3>
-        <h2 style="font-size: 42px; line-height: 1.1; margin-bottom: 30px;">Why the world's leading brands trust PSC.</h2>
-        <p style="opacity: 0.7; margin-bottom: 40px;">We don't just buy media; we engineer systems. Our technology stack ensures brand safety, transparency, and incremental growth.</p>
-        <ul style="list-style: none; opacity: 0.9;">
-            <li style="margin-bottom: 15px;">✓ MOAT & IAS Integrated Brand Safety</li>
-            <li style="margin-bottom: 15px;">✓ Real-time Unified Performance Dashboards</li>
-            <li style="margin-bottom: 15px;">✓ Proprietary Anti-Fraud Protection Layers</li>
-        </ul>
-    </div>
-    <div class="tech-box">
-        <div class="tech-card">
-            <h5>Precision</h5>
-            <p>Targeting with 98% accuracy across 1st and 3rd party data segments.</p>
-        </div>
-        <div class="tech-card">
-            <h5>Agility</h5>
-            <p>Campaign pivots in < 4 hours based on real-time performance signals.</p>
-        </div>
-        <div class="tech-card">
-            <h5>Scale</h5>
-            <p>Access to 5B+ daily impressions globally through premium exchanges.</p>
-        </div>
-        <div class="tech-card">
-            <h5>Insight</h5>
-            <p>Deep-dive post-campaign analysis that informs future business strategy.</p>
-        </div>
-    </div>
-</section>
-
-<section class="founder-wrap" id="founder">
-    <div class="founder-card">
-        <div class="founder-img"></div>
-        <div class="founder-bio">
-            <h3 style="color: var(--brand-purple); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">The Visionary</h3>
-            <h2>Pranay Chowdhary</h2>
-            <p>A performance architect with a track record of scaling multi-crore portfolios for India's unicorn brands. Pranay founded PSC Media Tech to bring "True Performance" to the digital landscape—where data leads, and results are the only currency.</p>
-            <a href="https://linkedin.com/in/pranaychowdhary" target="_blank" style="color: var(--brand-purple); font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--brand-purple);">VIEW PROFESSIONAL PROFILE →</a>
-        </div>
-    </div>
-</section>
-
-<section class="contact-v2" id="contact">
-    <h2 style="font-size: 40px; margin-bottom: 15px;">Ready to Engineer Alpha?</h2>
-    <p style="opacity: 0.8;">Fill in your details for a complimentary 30-minute growth audit.</p>
-    
-    <div class="form-dark">
+    <div class="contact-card">
         <form action="https://formspree.io/f/xdabwbzj" method="POST">
-            <label>Full Name</label>
-            <input type="text" name="name" required>
-            
-            <label>Work Email</label>
-            <input type="email" name="email" required>
-            
-            <label>Company Website</label>
-            <input type="text" name="website" required>
-            
-            <label>Monthly Budget Range</label>
-            <input type="text" name="budget" placeholder="e.g. $10k - $50k" required>
-            
-            <button type="submit" class="btn" style="background: white; color: black; border-radius: 50px; margin-top: 20px;">Secure Consultation</button>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label>Work Email</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>Company Website</label>
+                <input type="text" name="website" required>
+            </div>
+            <div class="form-group">
+                <label>Monthly Scale Goal</label>
+                <input type="text" name="goal" placeholder="e.g. 2x Revenue / 50k Leads" required>
+            </div>
+            <button type="submit" class="btn">Submit Request</button>
         </form>
     </div>
 </section>
 
 <footer>
-    <img src="https://images.squarespace-cdn.com/content/69fdb4e5209d573dc719391f/6e76699e-565d-4a5a-9ea5-c48eae5e718e/Gemini_Generated_Image_807hk8807hk8807h.png?content-type=image%2Fpng" alt="PSC Logo" style="height: 100px;">
+    <img src="https://images.squarespace-cdn.com/content/69fdb4e5209d573dc719391f/6e76699e-565d-4a5a-9ea5-c48eae5e718e/Gemini_Generated_Image_807hk8807hk8807h.png?content-type=image%2Fpng" alt="PSC Logo" style="height: 80px;">
     <div class="footer-links">
         <a href="#">LINKEDIN</a>
-        <a href="#">TWITTER</a>
+        <a href="#">INSTAGRAM</a>
         <a href="mailto:pranay@pscmediatech.com">PRANAY@PSCMEDIATECH.COM</a>
     </div>
-    <p style="font-size: 11px; color: #ccc;">© 2026 PSC Media Tech Private Limited. All Rights Reserved. Engineered for Excellence.</p>
+    <p style="font-size: 11px; color: var(--text-muted);">© 2026 PSC Media Tech Private Limited. All Rights Reserved.</p>
 </footer>
 
 </body>
