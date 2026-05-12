@@ -60,36 +60,38 @@
         }
         .metric-item { text-align: center; }
         .metric-item h4 { font-size: 24px; color: var(--brand-purple); font-weight: 800; }
-        .metric-item p { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-top: 5px; }
+        .metric-item p { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-top: 5px; }
 
         /* --- SOLUTIONS: VISUAL GRID --- */
         .section-header { padding: 80px 10% 40px; text-align: center; }
         .solution-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 30px; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 25px; 
             padding: 0 10% 80px; 
         }
         .solution-card { 
             background: var(--bg-light); 
-            border-radius: 24px; 
+            border-radius: 20px; 
             overflow: hidden; 
             border: 1px solid rgba(0,0,0,0.03);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
         }
-        .solution-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(75,0,130,0.08); border-color: var(--brand-purple-light); }
-        .sol-img { height: 200px; background-size: cover; background-position: center; }
-        .sol-content { padding: 30px; }
-        .sol-content h3 { font-size: 20px; color: var(--brand-purple); margin-bottom: 12px; font-weight: 700; }
-        .sol-content p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+        .solution-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(75,0,130,0.1); border-color: var(--brand-purple-light); }
+        .sol-img { height: 180px; background-size: cover; background-position: center; }
+        .sol-content { padding: 25px; flex-grow: 1; }
+        .sol-content h3 { font-size: 18px; color: var(--brand-purple); margin-bottom: 10px; font-weight: 700; }
+        .sol-content p { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
 
         /* --- FOUNDER --- */
         .founder-section { padding: 80px 10%; display: flex; align-items: center; gap: 60px; background: var(--bg-light); border-radius: 60px; margin: 0 4%; }
         .founder-image { 
             flex: 1; 
-            height: 500px; 
+            height: 480px; 
             background: url('https://images.squarespace-cdn.com/content/69fdb4e5209d573dc719391f/240d3ce0-1ee8-4056-84a4-e06bd0af980a/WhatsApp+Image+2026-05-09+at+15.12.27.jpeg?content-type=image%2Fjpeg') center/cover; 
-            border-radius: 30px; 
+            border-radius: 24px; 
         }
         .founder-text { flex: 1.2; }
         .founder-text h2 { font-size: 32px; margin-bottom: 20px; color: var(--brand-purple); }
@@ -106,20 +108,20 @@
             border: 1px solid var(--brand-purple-light);
         }
         .form-group { text-align: left; margin-bottom: 20px; }
-        .form-group label { display: block; font-size: 12px; font-weight: 700; color: var(--brand-purple); margin-bottom: 8px; text-transform: uppercase; }
-        .form-group input { width: 100%; padding: 15px; border: 1px solid #eee; border-radius: 12px; outline: none; transition: 0.3s; }
-        .form-group input:focus { border-color: var(--brand-purple); }
+        .form-group label { display: block; font-size: 11px; font-weight: 700; color: var(--brand-purple); margin-bottom: 6px; text-transform: uppercase; }
+        .form-group input, .form-group textarea { width: 100%; padding: 14px; border: 1px solid #eee; border-radius: 10px; outline: none; font-family: inherit; }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--brand-purple); }
 
         .btn { 
             background: var(--brand-purple); 
             color: white; 
             border: none; 
-            padding: 18px 40px; 
+            padding: 16px 40px; 
             border-radius: 50px; 
             font-weight: 700; 
             cursor: pointer; 
             width: 100%; 
-            font-size: 16px;
+            font-size: 15px;
             transition: var(--transition);
         }
         .btn:hover { background: var(--brand-purple-deep); transform: scale(1.02); }
@@ -129,10 +131,14 @@
         .footer-links { margin: 25px 0; display: flex; justify-content: center; gap: 30px; }
         .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 600; }
 
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
+        @media (max-width: 900px) {
+            .solution-grid { grid-template-columns: repeat(2, 1fr); }
             .founder-section { flex-direction: column; padding: 40px; text-align: center; }
             .founder-image { width: 100%; height: 350px; }
+        }
+        @media (max-width: 600px) {
+            .solution-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -151,8 +157,8 @@
 
 <section class="hero">
     <h1>Engineering <span>Growth</span><br>Across Every Screen.</h1>
-    <p>We combine 15 years of performance legacy with cutting-edge AI technology to scale brands with absolute transparency.</p>
-    <a href="#contact" style="text-decoration:none" class="btn" style="width:auto">Initiate Scale</a>
+    <p>Combining a 15-year performance legacy with advanced media-tech systems to scale global brands with absolute accountability.</p>
+    <a href="#contact" style="text-decoration:none; display:inline-block; width:auto;" class="btn">Initiate Scale</a>
 </section>
 
 <div class="metrics-bar">
@@ -162,10 +168,10 @@
     </div>
     <div class="metric-item">
         <h4>500M+</h4>
-        <p>Monthly Impressions</p>
+        <p>Monthly Reach</p>
     </div>
     <div class="metric-item">
-        <h4>Data-First</h4>
+        <h4>Unified</h4>
         <p>Growth Framework</p>
     </div>
     <div class="metric-item">
@@ -175,50 +181,93 @@
 </div>
 
 <section id="solutions" class="section-header">
-    <h2 style="font-size: 32px;">Specialized Media Solutions</h2>
+    <h2 style="font-size: 32px;">Our Full-Stack Capabilities</h2>
+    <p style="color:var(--text-muted); margin-top:10px;">End-to-end solutions designed for measurable business impact.</p>
 </section>
 
 <div class="solution-grid">
     <div class="solution-card">
-        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600');"></div>
+        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&q=80&w=600');"></div>
         <div class="sol-content">
             <h3>OTT & CTV Advertising</h3>
-            <p>Target the modern living room with unskippable ads on premium streaming services, optimized for household brand recall.</p>
+            <p>Target premium living room audiences with unskippable, high-definition ad formats on streaming platforms.</p>
         </div>
     </div>
     <div class="solution-card">
         <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600');"></div>
         <div class="sol-content">
             <h3>Performance Lead Gen</h3>
-            <p>Quality-vetted acquisition on CPL and CPA models. We don't just deliver clicks; we deliver future customers.</p>
+            <p>Scalable quality-first acquisition across CPL, CPA, and CPS models with deep funnel optimization.</p>
         </div>
     </div>
     <div class="solution-card">
         <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600');"></div>
         <div class="sol-content">
             <h3>Mobile App Marketing</h3>
-            <p>End-to-end user acquisition for Android and iOS, focusing on high-retention users and fraud-free scale.</p>
+            <p>Full-funnel user acquisition and retention strategies focusing on high-LTV users and app-store dominance.</p>
+        </div>
+    </div>
+    <div class="solution-card">
+        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=600');"></div>
+        <div class="sol-content">
+            <h3>Programmatic Display</h3>
+            <p>AI-driven bidding across global exchanges to reach the right user at the right price, every time.</p>
+        </div>
+    </div>
+    <div class="solution-card">
+        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=600');"></div>
+        <div class="sol-content">
+            <h3>Contextual Targeting</h3>
+            <p>Privacy-safe, cookie-less targeting using AI to analyze content sentiment for hyper-relevant ad placement.</p>
         </div>
     </div>
     <div class="solution-card">
         <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=600');"></div>
         <div class="sol-content">
             <h3>Rich Media Innovation</h3>
-            <p>Engage audiences with interactive and gamified ad formats that outperform standard banners by 400%.</p>
+            <p>Immersive and interactive ad units designed to capture attention and drive superior engagement rates.</p>
         </div>
     </div>
     <div class="solution-card">
-        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=600');"></div>
+        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1586880244406-556ebe35f28e?auto=format&fit=crop&q=80&w=600');"></div>
         <div class="sol-content">
-            <h3>Marketplace Ads</h3>
-            <p>Dominate Amazon, Instamart, and Zepto. We optimize your digital shelf presence for immediate ROI.</p>
+            <h3>Marketplace Dominance</h3>
+            <p>Optimization and ad management for Amazon, Instamart, Zepto, and other quick-commerce leaders.</p>
         </div>
     </div>
     <div class="solution-card">
-        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&q=80&w=600');"></div>
+        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1589903308914-129111404029?auto=format&fit=crop&q=80&w=600');"></div>
         <div class="sol-content">
-            <h3>Programmatic Display</h3>
-            <p>Real-time bidding across global exchanges using AI-powered contextual targeting for brand safety.</p>
+            <h3>Voice & Audio Ads</h3>
+            <p>Reach listeners on Spotify, podcasts, and NLP-driven voice assistants with targeted audio creative.</p>
+        </div>
+    </div>
+    <div class="solution-card">
+        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1557426272-fc759fbb7a8d?auto=format&fit=crop&q=80&w=600');"></div>
+        <div class="sol-content">
+            <h3>Influencer Network</h3>
+            <p>Data-vetted partnerships with 30,000+ creators to drive authentic brand storytelling at scale.</p>
+        </div>
+    </div>
+    <div class="solution-card">
+        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600');"></div>
+        <div class="sol-content">
+            <h3>Digital OOH</h3>
+            <p>Modernize your outdoor presence with data-triggered digital billboards in high-traffic urban centers.</p>
+        </div>
+    </div>
+    <div class="solution-card">
+        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=600');"></div>
+        <div class="sol-content">
+            <h3>Public Relations</h3>
+            <p>Strategic media relations and crisis management to build long-term brand authority and trust.</p>
+        </div>
+    </div>
+    <div class="solution-card">
+        <div class="sol-img" style="background-image: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=600');"></div>
+        <div class="sol-content">
+            <h3>Creative Engineering</h3>
+            <p>Fusing data insights with high-end creative production to build ads that don't just look good—they sell.</p>
         </div>
     </div>
 </div>
@@ -226,16 +275,16 @@
 <section id="founder" class="founder-section">
     <div class="founder-image"></div>
     <div class="founder-text">
-        <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: 800; color: var(--brand-purple); margin-bottom: 10px;">The Leadership</p>
+        <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 11px; font-weight: 800; color: var(--brand-purple); margin-bottom: 10px;">The Leadership</p>
         <h2>Pranay Chowdhary</h2>
-        <p>A seasoned growth architect with a 15-year legacy in the Indian digital ecosystem. Having managed high-stakes portfolios for top-tier brands, Pranay founded PSC Media Tech to bridge the gap between media buying and business EBITDA.</p>
-        <a href="https://linkedin.com/in/pranaychowdhary" target="_blank" style="color: var(--brand-purple); font-weight: 800; text-decoration: none; display: inline-block; margin-top: 20px;">Connect on LinkedIn →</a>
+        <p>A growth architect with over 15 years of deep-rooted digital experience. Having managed high-stakes media portfolios for India's leading brands, Pranay founded PSC Media Tech to offer a more transparent, data-driven approach to performance marketing.</p>
+        <a href="https://linkedin.com/in/pranaychowdhary" target="_blank" style="color: var(--brand-purple); font-weight: 800; text-decoration: none; display: inline-block; margin-top: 20px; border-bottom: 2px solid var(--brand-purple-light);">Connect on LinkedIn →</a>
     </div>
 </section>
 
 <section id="contact" class="contact-section">
     <h2 style="font-size: 42px; font-weight: 800;">Ready to Scale?</h2>
-    <p style="color: var(--text-muted); margin-top: 10px;">Get a detailed performance audit for your brand.</p>
+    <p style="color: var(--text-muted); margin-top: 10px;">Book a growth consultation to see how we can optimize your funnel.</p>
     
     <div class="contact-card">
         <form action="https://formspree.io/f/xdabwbzj" method="POST">
@@ -252,8 +301,8 @@
                 <input type="text" name="website" required>
             </div>
             <div class="form-group">
-                <label>Monthly Scale Goal</label>
-                <input type="text" name="goal" placeholder="e.g. 2x Revenue / 50k Leads" required>
+                <label>Message / Goals</label>
+                <textarea name="message" rows="3" placeholder="Tell us about your scale targets..."></textarea>
             </div>
             <button type="submit" class="btn">Submit Request</button>
         </form>
