@@ -32,7 +32,7 @@
         }
         
         .nav-brand { display: flex; align-items: center; }
-        .logo-img { height: 140px; width: auto; display: block; margin-left: -15px; }
+        .logo-img { height: 120px; width: auto; display: block; margin-left: -15px; }
 
         .nav-links { display: flex; align-items: center; }
         .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 14px; margin-left: 30px; transition: var(--transition); }
@@ -40,75 +40,81 @@
 
         /* --- HERO --- */
         .hero {
-            height: 70vh;
+            height: 85vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 80px 10% 0;
+            padding: 100px 10% 0;
             background: radial-gradient(circle at 50% 50%, #fff 0%, var(--brand-purple-soft) 150%);
         }
-        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; letter-spacing: -2px; margin-bottom: 15px; }
+        .hero h1 { font-size: clamp(2.8rem, 7vw, 4.5rem); font-weight: 800; line-height: 1.05; letter-spacing: -3px; margin-bottom: 20px; }
         .hero h1 span { color: var(--brand-purple); }
-        .hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 30px; }
+        .hero p { font-size: 1.25rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 35px; }
+
+        /* --- STATS BAR --- */
+        .stats-bar { background: var(--brand-purple); color: white; padding: 40px 10%; display: flex; justify-content: space-around; text-align: center; }
+        .stat-item h4 { font-size: 32px; font-weight: 800; }
+        .stat-item p { font-size: 12px; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; }
 
         /* --- PHILOSOPHY --- */
         .grid-split { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #eee; }
-        .grid-item { padding: 50px 8%; background: white; }
-        .grid-item h3 { color: var(--brand-purple); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
-        .grid-item h2 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+        .grid-item { padding: 80px 10%; background: white; }
+        .grid-item h3 { color: var(--brand-purple); font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
+        .grid-item h2 { font-size: 28px; font-weight: 700; margin-bottom: 20px; }
 
-        /* --- SERVICES: 3x2 GRID --- */
-        .section-header { padding: 60px 10% 25px; text-align: center; }
+        /* --- SERVICES: 4-COLUMN GRID --- */
+        .section-header { padding: 80px 10% 40px; text-align: center; }
         .services-grid { 
             display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             gap: 25px; 
-            padding: 0 10% 60px; 
+            padding: 0 10% 80px; 
         }
-        .service-card { border-radius: 20px; overflow: hidden; background: var(--bg-light); border: 1px solid rgba(0,0,0,0.03); transition: var(--transition); }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(75,0,130,0.1); }
-        .service-img { height: 160px; background-size: cover; background-position: center; }
-        .service-info { padding: 25px; }
-        .service-info h3 { margin-bottom: 8px; font-size: 18px; color: var(--brand-purple); }
+        .service-card { border-radius: 24px; overflow: hidden; background: var(--bg-light); border: 1px solid rgba(0,0,0,0.03); transition: var(--transition); display: flex; flex-direction: column; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--brand-purple-soft); }
+        .service-img { height: 180px; background-size: cover; background-position: center; }
+        .service-info { padding: 30px; flex-grow: 1; }
+        .service-info h3 { margin-bottom: 12px; font-size: 18px; color: var(--brand-purple); font-weight: 700; }
+        .service-info p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+        /* --- FULL FUNNEL SECTION --- */
+        .funnel-section { padding: 80px 10%; background: #000; color: white; text-align: center; }
+        .funnel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 50px; }
+        .funnel-item { border-left: 2px solid var(--brand-purple); padding-left: 20px; text-align: left; }
+        .funnel-item h4 { color: var(--brand-purple-soft); margin-bottom: 10px; font-size: 18px; }
 
         /* --- FOUNDER SECTION --- */
-        .founder-clean { padding: 60px 10%; display: flex; align-items: center; gap: 50px; background: white; }
+        .founder-clean { padding: 100px 10%; display: flex; align-items: center; gap: 70px; background: white; }
         .founder-image { 
             flex: 1; 
-            height: 450px; 
+            height: 500px; 
             background: url('https://images.squarespace-cdn.com/content/69fdb4e5209d573dc719391f/240d3ce0-1ee8-4056-84a4-e06bd0af980a/WhatsApp+Image+2026-05-09+at+15.12.27.jpeg?content-type=image%2Fjpeg') center/cover; 
-            border-radius: 20px; 
+            border-radius: 30px; 
+            box-shadow: 20px 20px 0px var(--brand-purple-soft);
         }
         .founder-text { flex: 1.2; }
 
         /* --- CONTACT FORM --- */
-        .contact-section { padding: 60px 10%; background: var(--bg-light); display: flex; flex-direction: column; align-items: center; }
-        .contact-container { background: white; padding: 40px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); width: 100%; max-width: 550px; }
-        .form-group { margin-bottom: 15px; text-align: left; }
-        .form-group label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 5px; }
-        .form-group input { width: 100%; padding: 12px; border: 1px solid #e1e1e1; border-radius: 10px; font-size: 14px; outline: none; }
+        .contact-section { padding: 100px 10%; background: var(--bg-light); display: flex; flex-direction: column; align-items: center; }
+        .contact-container { background: white; padding: 50px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); width: 100%; max-width: 600px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 15px; border: 1px solid #e1e1e1; border-radius: 12px; font-size: 15px; outline: none; font-family: inherit; }
         .form-group input:focus { border-color: var(--brand-purple); }
 
         /* --- BUTTONS --- */
-        .btn { display: inline-block; width: 100%; text-align: center; padding: 15px; background: var(--brand-purple); color: white; text-decoration: none; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; transition: var(--transition); font-size: 16px; }
-        .btn:hover { background: #330060; transform: translateY(-2px); }
-        .btn-hero { width: auto; padding: 15px 40px; border-radius: 30px; }
+        .btn { display: inline-block; width: 100%; text-align: center; padding: 18px; background: var(--brand-purple); color: white; text-decoration: none; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: var(--transition); font-size: 16px; }
+        .btn:hover { background: #330060; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(75,0,130,0.2); }
+        .btn-hero { width: auto; padding: 18px 50px; border-radius: 40px; }
 
         /* --- FOOTER --- */
-        footer { padding: 40px 10%; background: white; border-top: 1px solid #f2f2f2; text-align: center; }
-        .footer-logo { height: 100px; width: auto; margin-bottom: 10px; }
+        footer { padding: 60px 10%; background: white; border-top: 1px solid #f2f2f2; text-align: center; }
+        .footer-logo { height: 100px; width: auto; margin-bottom: 20px; }
 
-        @media (max-width: 1024px) {
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 768px) {
-            .logo-img { height: 100px; }
-            .nav-links { display: none; }
-            .services-grid { grid-template-columns: 1fr; }
-            .grid-split, .founder-clean { grid-template-columns: 1fr; flex-direction: column; text-align: center; }
-            .founder-image { width: 100%; height: 350px; }
+        @media (max-width: 992px) {
+            .founder-clean { flex-direction: column; text-align: center; }
+            .founder-image { width: 100%; height: 400px; }
         }
     </style>
 </head>
@@ -122,95 +128,141 @@
         <a href="#about">Philosophy</a>
         <a href="#services">Solutions</a>
         <a href="#founder">Enabler</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Consultation</a>
     </div>
 </nav>
 
 <section class="hero">
     <div class="hero-content">
-        <h1>Where Performance Meets <span>Purpose.</span></h1>
-        <p>Advanced media science and AI-driven growth systems architected for global scale.</p>
-        <a href="#contact" class="btn btn-hero">Start the Audit</a>
+        <h1>Engineering <span>Growth</span> Beyond the Screen.</h1>
+        <p>Combining intelligent ad technology, deep media expertise, and AI-driven growth systems to ensure every rupee invested creates measurable value.</p>
+        <a href="#contact" class="btn btn-hero">Start Your Audit</a>
     </div>
 </section>
 
+<div class="stats-bar">
+    <div class="stat-item"><h4>200+</h4><p>Global Brands Served</p></div>
+    <div class="stat-item"><h4>40+</h4><p>Countries Reached</p></div>
+    <div class="stat-item"><h4>99%</h4><p>Brand Safety Score</p></div>
+    <div class="stat-item"><h4>10+</h4><p>Years Excellence</p></div>
+</div>
+
 <section class="grid-split" id="about">
     <div class="grid-item">
-        <h3>Vision</h3>
-        <h2>The Core Objective.</h2>
-        <p style="color: var(--text-muted); font-size: 14px;">To redefine business scale by synthesizing deep-tech data with human intuition, making marketing investment transparent and measurable.</p>
+        <h3>Our Objective</h3>
+        <h2>Redefining Business Scale.</h2>
+        <p style="color: var(--text-muted);">We operate at the intersection of technology and media, delivering full-funnel campaigns that bridge the gap between creative innovation and analytical performance.</p>
     </div>
     <div class="grid-item">
-        <h3>Mission</h3>
-        <h2>Our Intent.</h2>
-        <p style="color: var(--text-muted); font-size: 14px;">To enable 100+ global brands to achieve exponential scale by deploying unified growth systems that convert data into revenue.</p>
+        <h3>Why Partner With Us?</h3>
+        <h2>Transparent Accountability.</h2>
+        <p style="color: var(--text-muted);">From AI-powered semantic targeting to in-house immersive creative labs, we eliminate "black box" marketing through real-time dashboards and intent-precise data.</p>
     </div>
 </section>
 
 <section class="section-header" id="services">
-    <h2 style="font-size: 32px;">Specialized Solutions</h2>
+    <h2 style="font-size: 36px; font-weight: 800;">Specialized Solutions</h2>
+    <p style="color: var(--text-muted); max-width: 600px; margin: 15px auto 0;">Everything your brand needs. One Partner. Every Screen.</p>
 </section>
 
 <div class="services-grid">
     <div class="service-card">
-        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800');"></div>
+        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600');"></div>
         <div class="service-info">
-            <h3>ROI Media Buying</h3>
-            <p style="color: var(--text-muted); font-size: 14px;">Precision cross-channel management designed to maximize bottom-line EBITDA.</p>
+            <h3>Programmatic & OTT</h3>
+            <p>Automated, AI-powered ad buying for targeted audience reach across streaming platforms and the open web in real-time.</p>
         </div>
     </div>
     <div class="service-card">
-        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800');"></div>
+        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=600');"></div>
         <div class="service-info">
-            <h3>AI Growth Systems</h3>
-            <p style="color: var(--text-muted); font-size: 14px;">Proprietary automation scripts that identify gaps and optimize funnels in real-time.</p>
+            <h3>CTV Innovation</h3>
+            <p>Engage audiences on Connected TV with unskippable formats like QR-to-mobile, shoppable ads, and household sync.</p>
         </div>
     </div>
     <div class="service-card">
-        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800');"></div>
+        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600');"></div>
         <div class="service-info">
-            <h3>CMO Strategy</h3>
-            <p style="color: var(--text-muted); font-size: 14px;">Leadership to align marketing technology and creative output with long-term valuation.</p>
+            <h3>Lead Generation</h3>
+            <p>Drive high-quality leads on CPL, CPA, and CPS models where our incentives are perfectly aligned with your business goals.</p>
         </div>
     </div>
     <div class="service-card">
-        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800');"></div>
+        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=600');"></div>
         <div class="service-info">
-            <h3>Creative Engineering</h3>
-            <p style="color: var(--text-muted); font-size: 14px;">High-frequency creative testing paired with psychological triggers to lower CAC.</p>
+            <h3>Rich Media Innovation</h3>
+            <p>Create immersive, gamified ad experiences that generate genuine engagement rather than just passive impressions.</p>
         </div>
     </div>
     <div class="service-card">
-        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=800');"></div>
+        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=600');"></div>
         <div class="service-info">
-            <h3>Marketplace Dominance</h3>
-            <p style="color: var(--text-muted); font-size: 14px;">End-to-end management for Amazon, Instamart, and Zepto to win the 'digital shelf'.</p>
+            <h3>Contextual Targeting</h3>
+            <p>Privacy-safe, cookie-free targeting using AI semantic engines to place ads within relevant, intent-precise content.</p>
         </div>
     </div>
     <div class="service-card">
-        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&q=80&w=800');"></div>
+        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600');"></div>
         <div class="service-info">
-            <h3>Omni-Screen Optimization</h3>
-            <p style="color: var(--text-muted); font-size: 14px;">Data-led execution across Connected TV (CTV), DOOH, and OTT for high-impact brand recall.</p>
+            <h3>Mobile Performance</h3>
+            <p>Global app-first campaigns optimized in real-time to acquire and retain high-LTV users across a fraud-free network.</p>
+        </div>
+    </div>
+    <div class="service-card">
+        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1557426272-fc759fbb7a8d?auto=format&fit=crop&w=600');"></div>
+        <div class="service-info">
+            <h3>Social & Influencer</h3>
+            <p>Content-led growth strategies backed by 30,000+ verified creators and data-driven targeting across all social platforms.</p>
+        </div>
+    </div>
+    <div class="service-card">
+        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1588702547919-26089e690ecc?auto=format&fit=crop&w=600');"></div>
+        <div class="service-info">
+            <h3>Voice & Audio Solutions</h3>
+            <p>NLP-powered audio targeting, call analytics, and conversational automation for the modern, voice-first consumer.</p>
         </div>
     </div>
 </div>
 
+<section class="funnel-section">
+    <h3 style="font-size: 12px; letter-spacing: 2px; color: var(--brand-purple-soft);">STRATEGIC FLOW</h3>
+    <h2 style="font-size: 32px; margin-top: 10px;">Full-Funnel Mastery</h2>
+    <div class="funnel-grid">
+        <div class="funnel-item">
+            <h4>Awareness</h4>
+            <p style="font-size: 14px; opacity: 0.7;">Build mass reach via OTT, CTV, and Contextual Display.</p>
+        </div>
+        <div class="funnel-item">
+            <h4>Consideration</h4>
+            <p style="font-size: 14px; opacity: 0.7;">Drive product intent with Rich Media and Audience Buy.</p>
+        </div>
+        <div class="funnel-item">
+            <h4>Conversion</h4>
+            <p style="font-size: 14px; opacity: 0.7;">Capture high-intent users via Performance and Retargeting.</p>
+        </div>
+        <div class="funnel-item">
+            <h4>Measurement</h4>
+            <p style="font-size: 14px; opacity: 0.7;">Verify impact with IAS, MOAT, and custom KPI dashboards.</p>
+        </div>
+    </div>
+</section>
+
 <section class="founder-clean" id="founder">
     <div class="founder-image"></div>
     <div class="founder-text">
-        <h3 style="color: var(--brand-purple); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Leadership</h3>
-        <h2 style="font-size: 30px; margin-bottom: 15px;">Pranay Chowdhary</h2>
-        <p style="font-size: 1rem; color: var(--text-muted); margin-bottom: 20px;">
-            A seasoned performance veteran, Pranay founded PSC Media Tech to solve the "black box" of digital marketing by managing multi-crore portfolios for India's leading brands.
+        <h3 style="color: var(--brand-purple); font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">Leadership</h3>
+        <h2 style="font-size: 34px; margin-bottom: 20px;">Pranay Chowdhary</h2>
+        <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 25px; line-height: 1.8;">
+            A seasoned performance veteran, Pranay founded PSC Media Tech to solve the "black box" of digital marketing by managing multi-crore portfolios for India's leading brands. His vision is built on genuine accountability and intelligent ad technology.
         </p>
-        <a href="https://linkedin.com/in/pranaychowdhary" target="_blank" class="btn" style="background: #0077b5; display: inline-block; width: auto; padding: 12px 25px;">Connect on LinkedIn</a>
+        <a href="https://linkedin.com/in/pranaychowdhary" target="_blank" class="btn" style="background: #0077b5; width: auto; padding: 15px 35px; border-radius: 40px;">Connect on LinkedIn</a>
     </div>
 </section>
 
 <section class="contact-section" id="contact">
-    <div style="text-align: center; margin-bottom: 30px;">
-        <h2 style="font-size: 28px; font-weight: 700;">Initiate Your Growth Audit</h2>
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-size: 32px; font-weight: 800;">Initiate Your Growth Audit</h2>
+        <p style="color: var(--text-muted); margin-top: 10px;">Let’s transform your digital presence into a revenue engine.</p>
     </div>
     <div class="contact-container">
         <form action="https://formspree.io/f/xdabwbzj" method="POST">
@@ -223,12 +275,12 @@
                 <input type="email" name="email" placeholder="john@company.com" required>
             </div>
             <div class="form-group">
-                <label>Phone Number</label>
-                <input type="tel" name="phone" placeholder="+91 00000 00000" required>
-            </div>
-            <div class="form-group">
                 <label>Company Name</label>
                 <input type="text" name="company" placeholder="Your Brand Ltd." required>
+            </div>
+            <div class="form-group">
+                <label>How can we help?</label>
+                <textarea name="message" rows="4" placeholder="Briefly describe your growth goals..." style="border: 1px solid #e1e1e1; border-radius: 12px; width: 100%; padding: 15px;"></textarea>
             </div>
             <button type="submit" class="btn">Submit Request</button>
         </form>
@@ -237,12 +289,12 @@
 
 <footer>
     <img src="https://images.squarespace-cdn.com/content/69fdb4e5209d573dc719391f/6e76699e-565d-4a5a-9ea5-c48eae5e718e/Gemini_Generated_Image_807hk8807hk8807h.png?content-type=image%2Fpng" alt="PSC Logo" class="footer-logo">
-    <div style="display: flex; justify-content: center; gap: 20px; margin: 15px 0;">
-        <a href="#" style="color: #888; text-decoration: none; font-size: 12px; font-weight: 600;">LINKEDIN</a>
-        <a href="#" style="color: #888; text-decoration: none; font-size: 12px; font-weight: 600;">INSTAGRAM</a>
-        <a href="mailto:pranay@pscmediatech.com" style="color: #888; text-decoration: none; font-size: 12px; font-weight: 600;">EMAIL</a>
+    <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0;">
+        <a href="#" style="color: var(--brand-purple); text-decoration: none; font-size: 13px; font-weight: 700;">LINKEDIN</a>
+        <a href="#" style="color: var(--brand-purple); text-decoration: none; font-size: 13px; font-weight: 700;">INSTAGRAM</a>
+        <a href="mailto:pranay@pscmediatech.com" style="color: var(--brand-purple); text-decoration: none; font-size: 13px; font-weight: 700;">PRANAY@PSCMEDIATECH.COM</a>
     </div>
-    <p style="font-size: 11px; color: #ccc;">© 2026 PSC Media Tech Private Limited.</p>
+    <p style="font-size: 11px; color: #aaa; margin-top: 20px;">© 2026 PSC Media Tech Private Limited. Empowering global brands with precision advertising.</p>
 </footer>
 
 </body>
